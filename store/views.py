@@ -3,8 +3,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def store(request):
-    return HttpResponse('''
-    <h1>Store</h2>
-    <p>Store </p>
-    <a href="/">Back Home</a>
-    ''')
+    return render(request, "store/store.html")

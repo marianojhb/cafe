@@ -37,12 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
-    'about',
-    'contact',
-    'blog',
-    'services.apps.ServicesConfig',
-    'store',
+    "core.apps.CoreConfig",
+    "about.apps.AboutConfig",
+    "contact.apps.ContactConfig",
+    "blog.apps.BlogConfig",
+    "services.apps.ServicesConfig",
+    "store.apps.StoreConfig",
 ]
 
 MIDDLEWARE = [
@@ -109,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'es-AR'
+LANGUAGE_CODE = "es-ar"
 
-TIME_ZONE = 'America/Buenos_Aires'
+TIME_ZONE = "America/Buenos_Aires"
 
 USE_I18N = True
 
@@ -123,10 +123,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/core/static/'
+STATIC_URL = "/core/static/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

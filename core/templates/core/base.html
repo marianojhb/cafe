@@ -1,8 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
-    {% include 'core/head.html' %}
-
+  {% include 'core/head.html' %}
   <body>
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
@@ -44,15 +44,15 @@
  
 
 
-{% block body %}
+{% block content %}
 
-{% endblock body %}
+{% endblock content %}
 
-
+{% include 'core/footer.html' %}
 
     <!-- Bootstrap -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   </body>
 
