@@ -14,26 +14,27 @@
                 </h2>
 
                 <!-- Formulario de contacto -->
-                <form>
+                <form action="{% url 'contact' %}"  method="post">
+                {% csrf_token %}
                     <div class="form-group">
                         <label>Nombre *</label>
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="email_name" autocomplete="off" autofocus>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Email *</label>
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                            <input type="email" class="form-control" name="email_address" autocomplete="off">
                         </div>
-                        <ul class="errorlist">
+                        {% comment %} <ul class="errorlist">
                             <li>El email no es correcto.</li>
-                        </ul>
+                        </ul> {% endcomment %}
                     </div>
                     <div class="form-group">
                         <label>Mensaje *</label>
                         <div class="input-group">
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="email_message" autocomplete="off"></textarea>
                         </div>
                     </div>
                     <div class="text-center">
