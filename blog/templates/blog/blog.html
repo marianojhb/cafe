@@ -24,7 +24,7 @@
                   en
                   <em> 
                     {% for category in post.categories.all %}
-                    <a href="" class="link">{{category.name}}</a></span>
+                    <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a></span>
                     {% endfor %}
                     </em>
                 </span>
