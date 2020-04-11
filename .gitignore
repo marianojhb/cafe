@@ -4,3 +4,4 @@ __pycache__/
 .git/
 django_smtp_gmail/
 django_smtp_gmail.md
+run

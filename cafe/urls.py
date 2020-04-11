@@ -21,12 +21,12 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('core.urls')),
-    path('about', include('about.urls')),
-    path('services', include('services.urls')),
-    path('store', include('store.urls')),
-    path('contact', include('contact.urls')),
-    path('blog', include('blog.urls')),
-    path('sample', include('sample.urls')),
+    path('about/', include('about.urls')),
+    path('services/', include('services.urls')),
+    path('store/', include('store.urls')),
+    path('contact/', include('contact.urls')),
+    path('blog/', include('blog.urls')),
+    path('sample/', include('sample.urls')),
     path('admin/', admin.site.urls),
 ]
 
