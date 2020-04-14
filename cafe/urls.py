@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from django.conf import settings
+from django.views.generic.base import RedirectView # to set favico
+from django.conf.urls import url # to set favico
 
 
 urlpatterns = [
@@ -28,6 +30,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('sample/', include('sample.urls')),
     path('admin/', admin.site.urls),
+    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')), # to set favico
 ]
 
 
