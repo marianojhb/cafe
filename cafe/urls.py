@@ -30,7 +30,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('sample/', include('sample.urls')),
     path('admin/', admin.site.urls),
-    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')), # to set favico
+    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/favicon.ico')), # to set favico
 ]
 
 
