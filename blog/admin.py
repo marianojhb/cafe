@@ -7,7 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ("created", "updated")
-    list_display = ("title", "author", "published")
+    list_display = ("title", "author", "published", "post_categories")
 
     # ordering para ordenar la tabla
     ordering = ("author","published")

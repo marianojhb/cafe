@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "services.apps.ServicesConfig",
     "store.apps.StoreConfig",
-    "sample.apps.SampleConfig",
+    "sample.apps.SampleConfig",                                    
+    "social.apps.SocialConfig",
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.processor.contexto_propio',
             ],
         },
     },
