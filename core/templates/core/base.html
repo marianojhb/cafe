@@ -3,13 +3,16 @@
 <html lang="es">
 
   <!-- Head -->
+  <head>
   {% include 'core/head.html' %}
+  <title>{% block title %}{% endblock %} | La Caffettiera</title>
+  </head>
 
   <body>
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       <span class="site-heading-upper text-primary mb-3">L'autentico caffè d'italia</span>
-      <span class="site-heading-lower">{% block title %}{% endblock %} | La Caffettiera</span>
+      <span class="site-heading-lower">La Caffettiera</span>
     </h1>
 
     <!-- Navegación -->
