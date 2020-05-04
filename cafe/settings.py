@@ -31,20 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "core.apps.CoreConfig",
-    "about.apps.AboutConfig",
-    "contact.apps.ContactConfig",
-    "blog.apps.BlogConfig",
+    "blog",
+    "ckeditor",
+    "contact",
+    "core",
+    "pages.apps.PagesConfig",
     "services.apps.ServicesConfig",
-    "store.apps.StoreConfig",
-    "sample.apps.SampleConfig",                                    
     "social.apps.SocialConfig",
 ]
 
@@ -63,7 +61,8 @@ ROOT_URLCONF = 'cafe.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #Aca le decimos a Django que busque en nuestra carpeta
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')], #agregamos para 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,14 +126,34 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = "/core/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = "/static/"
+
+# Que mapee los archivos estaticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Archivos media
 
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# Ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink']
+        ]
+    }
+}
+
+
+
+
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
